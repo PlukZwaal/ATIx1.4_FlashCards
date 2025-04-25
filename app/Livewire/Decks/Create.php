@@ -31,9 +31,12 @@ class Create extends Component
             'user_id' => Auth::id()
         ]);
 
+        $this->dispatch('deck-created'); // <-- HIER!
+
         $this->showModal = false;
         session()->flash('success', 'Deck succesvol aangemaakt!');
     }
+
 
     public function render()
     {

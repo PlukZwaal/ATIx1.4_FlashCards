@@ -1,17 +1,16 @@
 <div x-data>
-    <!-- Open Modal Button -->
-    <x-primary-button @click="$wire.openModal()">
-        Create New Deck
-    </x-primary-button>
+    <div class="mb-5">
+        <x-primary-button @click="$wire.openModal()">
+            Create New Deck
+        </x-primary-button>
+    </div>
 
-    <!-- Modal Backdrop -->
     <div 
         x-show="$wire.showModal"
         class="fixed inset-0 bg-black/50 z-40"
         x-transition.opacity
     ></div>
 
-    <!-- Modal -->
     <div 
         x-show="$wire.showModal"
         class="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -39,7 +38,7 @@
                     @enderror
                 </div>
 
-                <div class="flex justify-end space-x-3">
+                <div class="flex justify-start space-x-3">
                     <x-primary-button type="submit">
                         Create
                     </x-primary-button>
