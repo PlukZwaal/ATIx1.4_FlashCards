@@ -1,7 +1,9 @@
 <div x-data="{ open: @entangle('showModal') }">
-    <x-primary-button @click="open = true">
-        Create New Card
-    </x-primary-button>
+    <div class="mb-5">
+        <x-primary-button @click="open = true">
+            Create New Card
+        </x-primary-button>
+    </div>
 
     <div x-show="open" class="fixed inset-0 bg-black/50 z-40" x-transition.opacity></div>
 

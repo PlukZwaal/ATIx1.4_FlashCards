@@ -13,9 +13,10 @@ class Grid extends Component
     public function render()
     {
         return view('livewire.decks.grid', [
-            'decks' => Deck::where('user_id', Auth::id())
-                           ->latest()
-                           ->get()
+            'decks' => Deck::withCount('cards')  
+                            ->where('user_id', Auth::id())
+                            ->latest()
+                            ->get()
         ]);
     }
 }
