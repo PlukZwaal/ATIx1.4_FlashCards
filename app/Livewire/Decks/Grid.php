@@ -4,6 +4,7 @@ namespace App\Livewire\Decks;
 
 use Livewire\Component;
 use App\Models\Deck;
+use Illuminate\Support\Facades\Auth;
 
 class Grid extends Component
 {
@@ -12,7 +13,9 @@ class Grid extends Component
     public function render()
     {
         return view('livewire.decks.grid', [
-            'decks' => Deck::latest()->get()
+            'decks' => Deck::where('user_id', Auth::id())
+                           ->latest()
+                           ->get()
         ]);
     }
 }
