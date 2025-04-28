@@ -8,6 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <livewire:cards.create :deck_id="$deck->id" />
+            <livewire:cards.grid :deckId="$deck->id" />
         </div>
     </div>
 
