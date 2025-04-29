@@ -5,6 +5,7 @@ use App\Livewire\Decks\Create;
 use App\Livewire\Decks\Show;
 use Livewire\Livewire;
 use App\Http\Controllers\DeckController;
+use App\Http\Controllers\GameController;
 
 Route::view('/dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -17,6 +18,7 @@ Route::view('profile', 'profile')
     ->name('profile');
     
     Route::get('/decks/{deck}', [DeckController::class, 'show'])->name('decks.show');
+    Route::get('/decks/{deck}/game', [GameController::class, 'show'])->name('decks.game');
 
     
 
