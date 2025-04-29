@@ -30,4 +30,5 @@
             Kaart {{ $index + 1 }} van {{ $deck->cards->count() }}
         </div>
     @endif
+
 </div>
