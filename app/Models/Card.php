@@ -14,4 +14,9 @@ class Card extends Model
         'back',
         'deck_id',
     ];
+
+    public function deck()
+{
+    return $this->belongsTo(\App\Models\Deck::class);
+}
 }

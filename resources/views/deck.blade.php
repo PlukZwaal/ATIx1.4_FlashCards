@@ -7,8 +7,14 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <livewire:cards.create :deck_id="$deck->id" />
-            <livewire:cards.grid :deckId="$deck->id" />
+
+            <div class="flex space-x-3 mb-5">
+                <livewire:cards.create :deck-id="$deck->id" />
+                <livewire:decks.update :deckId="$deck->id" />
+                <livewire:decks.delete :deckId="$deck->id" />
+            </div>
+
+            <livewire:cards.grid :deck-id="$deck->id" />
         </div>
     </div>
 
