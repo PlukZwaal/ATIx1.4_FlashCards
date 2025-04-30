@@ -5,6 +5,7 @@ namespace App\Livewire\Decks;
 use Livewire\Component;
 use App\Models\Deck;
 use App\Models\Card;
+use App\Models\GameSession;  // Voeg dit toe om sessies op te halen
 use Illuminate\Support\Facades\Auth;
 
 class Delete extends Component
@@ -24,12 +25,14 @@ class Delete extends Component
 
     public function deleteDeck()
     {
+        GameSession::where('deck_id', $this->deck->id)->delete();
+        
         $this->deck->cards()->delete(); 
-    
+        
         $this->deck->delete();
     
         $this->showModal = false;
-        session()->flash('success', 'Deck en kaarten succesvol verwijderd!');
+        session()->flash('success', 'Deck, cards, and associated sessions successfully deleted!');
     
         return redirect()->route('dashboard');
     }

@@ -1,19 +1,16 @@
 <div x-data>
-    <!-- Knop om modal te openen -->
     <div class="mb-5">
         <x-primary-button @click="$wire.openModal()">
-            Bewerk Deck
+            Edit Deck
         </x-primary-button>
     </div>
 
-    <!-- Achtergrond overlay voor modal -->
     <div 
         x-show="$wire.showModal"
         class="fixed inset-0 bg-black/50 z-40"
         x-transition.opacity
     ></div>
 
-    <!-- Modal -->
     <div 
         x-show="$wire.showModal"
         class="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -24,12 +21,11 @@
             class="w-full max-w-md bg-white rounded-lg shadow-xl p-6"
             x-transition
         >
-            <h2 class="text-xl font-bold mb-4">Bewerk Deck</h2>
+            <h2 class="text-xl font-bold mb-4">Edit Deck</h2>
 
-            <!-- Formulier om deck te bewerken -->
             <form wire:submit.prevent="save">
                 <div class="mb-4">
-                    <label class="block mb-2 font-medium">Titel</label>
+                    <label class="block mb-2 font-medium">Title</label>
                     <x-text-input 
                         wire:model="title"
                         type="text"
@@ -43,7 +39,7 @@
 
                 <div class="flex justify-start space-x-3">
                     <x-primary-button type="submit">
-                        Opslaan
+                        Save
                     </x-primary-button>
                 </div>
             </form>

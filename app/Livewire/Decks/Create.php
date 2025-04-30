@@ -34,7 +34,7 @@ class Create extends Component
         $this->dispatch('deck-created'); 
 
         $this->showModal = false;
-        session()->flash('success', 'Deck succesvol aangemaakt!');
+        session()->flash('success', 'Deck successfully created!');
     }
 
 

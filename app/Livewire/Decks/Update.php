@@ -43,7 +43,7 @@ class Update extends Component
         $this->dispatch('deck-updated');
 
         $this->showModal = false;
-        session()->flash('success', 'Deck succesvol bijgewerkt!');
+        session()->flash('success', 'Deck successfully updated!');
     }
 
     public function render()

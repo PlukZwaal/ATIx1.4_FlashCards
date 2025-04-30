@@ -19,8 +19,22 @@ class GameSession extends Model
     ];
 
     protected $casts = [
-        'correct_answers' => 'array', 
-        'incorrect_answers' => 'array', 
+        'correct_answers' => 'array',
+        'incorrect_answers' => 'array',
     ];
 
+    public function deck()
+    {
+        return $this->belongsTo(\App\Models\Deck::class);
+    }
+
+    public function getCorrectAnswersAttribute($value)
+    {
+        return json_decode($value, true); // Zet de string om naar een array
+    }
+
+    public function getIncorrectAnswersAttribute($value)
+    {
+        return json_decode($value, true); // Zet de string om naar een array
+    }
 }

@@ -32,7 +32,7 @@ class Create extends Component
 
         $this->reset('front', 'back');
         $this->showModal = false;
-        session()->flash('success', 'Card succesvol aangemaakt!');
+        session()->flash('success', 'Card successfully created!');
     }
 
     public function render()

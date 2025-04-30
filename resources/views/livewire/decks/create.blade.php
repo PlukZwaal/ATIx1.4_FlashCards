@@ -29,7 +29,7 @@
                     <x-text-input 
                         wire:model="title"
                         type="text"
-                        placeholder="Bijv. Mijn Studie Deck"
+                        placeholder="My Study Deck"
                         class="w-full"
                         autofocus
                     />
