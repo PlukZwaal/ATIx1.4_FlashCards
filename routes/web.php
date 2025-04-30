@@ -17,9 +17,9 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::view('/sessions', 'sessions')
-->middleware(['auth', 'verified'])
-->name('sessions');
+    Route::view('/sessions', 'sessions')
+    ->middleware(['auth', 'verified'])
+    ->name('sessions');
     
 Route::get('/decks/{deck}', [DeckController::class, 'show'])->name('decks.show');
 Route::get('/decks/{deck}/game', [GameController::class, 'show'])->name('decks.game');

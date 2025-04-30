@@ -7,10 +7,12 @@ use App\Models\GameSession;
 
 class Sessions extends Component
 {
-
     public function render()
     {
-        return view('livewire.games.sessions');
-    }
+        $sessions = GameSession::all();
 
+        return view('livewire.game.sessions', [
+            'sessions' => $sessions
+        ]);
+    }
 }
