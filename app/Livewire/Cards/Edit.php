@@ -10,6 +10,7 @@ class Edit extends Component
     public $card;
     public $front;
     public $back;
+    public $showModal = false;
 
     public function mount(Card $card)
     {
@@ -30,6 +31,7 @@ class Edit extends Component
             'back' => $this->back,
         ]);
 
+        $this->showModal = false;
         session()->flash('success', 'Kaart succesvol bijgewerkt!');
     }
 
