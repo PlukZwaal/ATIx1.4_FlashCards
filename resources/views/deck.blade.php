@@ -14,8 +14,11 @@
                 <livewire:decks.delete :deckId="$deck->id" />
             </div>
 
+            {{-- Je kaart-grid waar elke kaart een Edit knop heeft --}}
             <livewire:cards.grid :deck-id="$deck->id" />
+
+            {{-- Hier voeg je het edit component toe --}}
+            <livewire:cards.edit />
         </div>
     </div>
-
 </x-app-layout>
