@@ -6,6 +6,7 @@ use App\Livewire\Decks\Show;
 use Livewire\Livewire;
 use App\Http\Controllers\DeckController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ApiController;
 
 Route::view('/dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -23,6 +24,14 @@ Route::view('profile', 'profile')
     
 Route::get('/decks/{deck}', [DeckController::class, 'show'])->name('decks.show');
 Route::get('/decks/{deck}/game', [GameController::class, 'show'])->name('decks.game');
+
+
+
+
+Route::get('/api/users', [ApiController::class, 'getAllUsers']);
+Route::get('/api/decks', [ApiController::class, 'getAllDecks']);
+Route::get('/api/cards', [ApiController::class, 'getAllCards']);
+Route::get('/api/game_sessions', [ApiController::class, 'getAllGameSessions']);
 
     
 

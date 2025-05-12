@@ -16,7 +16,6 @@ class Update extends Component
         'title' => 'required|min:3|max:255'
     ];
 
-    // Laad het deck op basis van het id
     public function mount($deckId)
     {
         $this->deckId = $deckId;
@@ -34,7 +33,6 @@ class Update extends Component
     {
         $this->validate();
 
-        // Werk het deck bij
         $deck = Deck::findOrFail($this->deckId);
         $deck->update([
             'title' => $this->title,
